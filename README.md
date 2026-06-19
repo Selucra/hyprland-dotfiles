@@ -1,7 +1,9 @@
 Minimal Tokyo Night themed desktop setup for Hyprland.
 
 ## Includes
+
 - Hyprland - WM
+- Kitty - Terminal Emulator
 - Waybar - Status Bar
 - Wofi - App Launcher
 - SwayNc - Notification Center
