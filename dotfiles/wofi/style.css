@@ -1,0 +1,77 @@
+/* 
+ayu green:
+@define-color teal    #95E6CB;
+*/
+
+@define-color teal    #7AA2F7;
+@define-color red     #F07178;
+@define-color text    #BFBDB6;
+@define-color surface0 #131721;
+@define-color base    #0D1017;
+
+* {
+  font-family: "CaskaydiaCove Nerd Font", monospace;
+  font-size: 18px;
+}
+
+#inner-box {
+  margin: 0;
+  padding: 5px;
+  border: none;
+  background-color: @base;
+}
+
+#outer-box {
+  margin: 0;
+  padding: 5px;
+  border: 2px solid @teal;
+  border-radius: 12px;
+  background-color: @base;
+}
+
+#scroll {
+  margin: 0;
+  padding: 5px 0;
+  border: none;
+  background-color: @base;
+}
+
+#input {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-bottom: 2px solid @teal;
+  border-radius: 0;
+  color: @text;
+  background-color: @base;
+}
+
+#input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#input image {
+  border: none;
+  color: @red;
+}
+
+#text {
+  margin: 5px;
+  border: none;
+  color: @text;
+}
+
+#entry {
+  border-radius: 5px;
+  margin: 2px 5px;
+  background-color: @base;
+}
+
+#entry:selected {
+  background-color: @surface0;
+}
+
+#entry:selected #text {
+  color: @teal;
+}

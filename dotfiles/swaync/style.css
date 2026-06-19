@@ -1,0 +1,91 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    color: #BFBDB6;
+    background: transparent;
+}
+
+.notification-row {
+    outline: none;
+    margin: 5px;
+}
+
+.notification {
+    background-color: rgba(31, 36, 48, 0.8);
+    border: 1px solid #131721;
+    border-radius: 10px;
+    padding: 10px;
+    color: #BFBDB6;
+}
+
+.notification-content {
+    padding: 5px;
+}
+
+.notification-default-action {
+    border-radius: 10px;
+}
+
+.notification-default-action:hover {
+    background: #131721;
+}
+
+.summary {
+    color: #BFBDB6;
+    font-weight: bold;
+}
+
+.body {
+    color: #BFBDB6;
+}
+
+.control-center {
+    background-color: rgba(13, 16, 23, 0.8);
+    border: 1px solid #131721;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    min-width: 350px;
+    max-width: 350px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.close-button {
+    background: #131721;
+    color: #BFBDB6;
+    border-radius: 5px;
+    border: none;
+}
+
+.close-button:hover {
+    background: #F07178;
+    color: #0D1017;
+}
+
+.widget-dnd {
+    background-color: rgba(31, 36, 48, 0.85);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    color: #BFBDB6;
+    font-weight: bold;
+}
+
+.widget-dnd > switch {
+    border-radius: 10px;
+    background: #131721;
+}
+
+.widget-dnd > switch:checked {
+    background: #7AA2F7;
+}
+
+.widget-title {
+    color: #BFBDB6;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+}
