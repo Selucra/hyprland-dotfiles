@@ -30,7 +30,7 @@
 }
 {
     "label" : "hibernate",
-    "action" : "systemctl start systemd-hibernate.service",
+    "action" : "systemctl hibernate",
     "text" : "Hibernate",
     "keybind" : "h",
 }
