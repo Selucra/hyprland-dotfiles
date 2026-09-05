@@ -1,0 +1,12 @@
+configuration{
+    modi: ["drun", "window", "run"];
+    icon-theme: "Papirus-Dark";
+    show-icons: true;
+    drun-display-format: "{icon} {name}";
+    display-drun: " ";
+    display-run: " ";
+    display-window: " ";
+    scroll-method: 1;
+}
+
+@theme "./ayu-tokyonight.rasi"
