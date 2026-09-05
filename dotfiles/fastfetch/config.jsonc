@@ -1,0 +1,52 @@
+{
+  "modules": [
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "os",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "kernel",
+      "format": "{release}"
+    },
+    {
+      "type": "wm",
+      "key": "WM",
+      "format": "{pretty-name}"
+    },
+    "packages",
+    "uptime",
+    {
+      "type": "memory",
+      "format": "{used} / {total}"
+    },
+    {
+      "type": "disk",
+      "key": "Disk",
+      "format": "{size-used} / {size-total} ({filesystem})"
+    },
+    "break"
+  ],
+  "logo": {
+    "type": "small",
+    "padding": {
+      "top": 1
+    },
+    "color": {
+      "1": "#7aa2f7",
+      "2": "#7aa2f7"
+    }
+  },
+  "display": {
+    "key": {
+      "width": 12,
+      "type": "string"
+    },
+    "color": {
+      "keys": "#7aa2f7"
+    }
+  }
+}
