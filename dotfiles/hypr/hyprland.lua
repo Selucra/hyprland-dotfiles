@@ -28,6 +28,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("QT_QPA_PLATFORM", "wayland")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+hl.env("EDITOR", "vscodium")
 
 
 hl.config({
@@ -178,9 +179,9 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("pkill " .. menu .. " || " .. menu ..
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region"))
 
--- Move focus with mainMod + arrow keys
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("pkill " .. menu .. " || ~/.config/rofi/scripts/filepicker.sh")) -- filepicker
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("pkill " .. menu .. " || cliphist list | " .. menu .. " -dmenu | cliphist decode | wl-copy")) -- clipboard
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
