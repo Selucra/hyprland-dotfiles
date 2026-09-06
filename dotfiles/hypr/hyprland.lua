@@ -9,7 +9,7 @@ hl.monitor({
 
 
 local terminal = "kitty"
-local fileManager = "nautilus"
+local fileManager = "yazi"
 local menu = "rofi"
 
 
