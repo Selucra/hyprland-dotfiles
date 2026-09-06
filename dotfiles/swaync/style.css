@@ -1,91 +1,109 @@
+@define-color night #7aa2f7;
+@define-color ayu #00ffaa;
+
+@define-color surface #1e1e2e;
+@define-color border #24283b;
+
 * {
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 14px;
-    color: #BFBDB6;
-    background: transparent;
-}
-
-.notification-row {
-    outline: none;
-    margin: 5px;
-}
-
-.notification {
-    background-color: rgba(31, 36, 48, 0.8);
-    border: 1px solid #131721;
-    border-radius: 10px;
-    padding: 10px;
-    color: #BFBDB6;
-}
-
-.notification-content {
-    padding: 5px;
-}
-
-.notification-default-action {
-    border-radius: 10px;
-}
-
-.notification-default-action:hover {
-    background: #131721;
-}
-
-.summary {
-    color: #BFBDB6;
-    font-weight: bold;
-}
-
-.body {
-    color: #BFBDB6;
+  font-family: "JetBrainsMonoNL Nerd Font";
+  font-size: 13px;
+  color: @night;
+  background: transparent;
 }
 
 .control-center {
-    background-color: rgba(13, 16, 23, 0.8);
-    border: 1px solid #131721;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    min-width: 350px;
-    max-width: 350px;
-}
-
-.control-center-list {
-    background: transparent;
-}
-
-.close-button {
-    background: #131721;
-    color: #BFBDB6;
-    border-radius: 5px;
-    border: none;
-}
-
-.close-button:hover {
-    background: #F07178;
-    color: #0D1017;
-}
-
-.widget-dnd {
-    background-color: rgba(31, 36, 48, 0.85);
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
-    color: #BFBDB6;
-    font-weight: bold;
-}
-
-.widget-dnd > switch {
-    border-radius: 10px;
-    background: #131721;
-}
-
-.widget-dnd > switch:checked {
-    background: #7AA2F7;
+  background-color: rgba(13, 16, 23, 0.8);
+  border: 1px solid @border;
+  border-radius: 10px;
+  padding: 3px;
 }
 
 .widget-title {
-    color: #BFBDB6;
-    font-weight: bold;
-    padding: 5px;
-    margin: 5px;
+  margin-bottom: -5px;
+}
+
+.widget-title > button:hover label {
+  color: @ayu;
+}
+
+.widget-dnd {
+  margin-top: -5px;
+  margin-bottom: -15px;
+}
+
+.widget-dnd switch {
+  background: @border;
+}
+
+.widget-dnd switch slider {
+  background: @night;
+  box-shadow: none;
+}
+
+.widget-dnd switch:checked {
+  background: @ayu;
+}
+
+.widget-dnd switch:checked slider {
+  background: white;
+}
+
+.notification {
+  background: @surface;
+  border: 1px solid @border;
+  margin: 2px 0px;
+  padding: 6px 8px;
+}
+
+.time {
+  color: @ayu;
+}
+
+.close-button:hover {
+  background: @ayu;
+}
+
+.close-button:hover image {
+  color: white;
+}
+
+.widget-mpris {
+  margin-top: -10px;
+  padding: 4px 2px;
+}
+
+.widget-mpris * {
+  color: @ayu;
+}
+
+.widget-mpris > button {
+  background: red !important;
+}
+
+.widget-volume {
+  margin-top: -15px;
+  margin-bottom: -5px;
+  padding: 4px 2px;
+}
+
+.widget-volume trough {
+  background: #1a2033;
+  min-height: 4px;
+}
+
+.widget-volume highlight {
+  background: @night;
+}
+
+.widget-volume slider {
+  background: @ayu;
+  box-shadow: none;
+}
+
+scrollbar slider {
+  background: @border;
+}
+
+scrollbar slider:hover {
+  background: @night;
 }

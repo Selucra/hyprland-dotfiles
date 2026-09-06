@@ -1,5 +1,29 @@
 {
-  "timeout": 4,
-  "timeout-low": 2,
-  "control-center-width": 350
+  "control-center-width": 305,
+  "notification-window-width": 330,
+  "timeout": 5,
+  "timeout-low": 3,
+  "timeout-critical": 0,
+  "control-center-margin-right": 5,
+  "control-center-margin-top": 5,
+  "control-center-margin-bottom": 5,
+
+  "widgets": ["title", "dnd", "notifications", "mpris", "volume"],
+
+  "widget-config": {
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": "Clear"
+    },
+
+    "mpris": {
+      "image-size": 50,
+      "loop-carousel": true
+    },
+
+    "volume": {
+      "label": ""
+    }
+  }
 }

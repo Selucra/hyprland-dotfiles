@@ -1,3 +1,6 @@
+------------------
+---- MONITORS ----
+------------------
 
 hl.monitor({
     output   = "",
@@ -7,45 +10,60 @@ hl.monitor({
 })
 
 
+---------------------
+---- MY PROGRAMS ----
+---------------------
 
 local terminal = "kitty"
 local fileManager = "yazi"
 local menu = "rofi"
 
 
+-------------------
+---- AUTOSTART ----
+-------------------
+
 hl.on("hyprland.start", function ()
    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
    hl.exec_cmd("wl-paste --type text --watch cliphist store")
    hl.exec_cmd("wl-paste --type image --watch cliphist store")
-   hl.exec_cmd("systemctl --user start hyprpolkitagent")
-   hl.exec_cmd("waybar & hyprpaper & hypridle & swaync & hyprsunset")
+    hl.exec_cmd("waybar & hyprpaper & hypridle & hyprsunset")
 end)
 
 
+-------------------------------
+---- ENVIRONMENT VARIABLES ----
+-------------------------------
 
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("QT_QPA_PLATFORM", "wayland")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 hl.env("EDITOR", "vscodium")
 
 
+-----------------------
+---- LOOK AND FEEL ----
+-----------------------
+
 hl.config({
    general = {
-      gaps_in = 5,
-      gaps_out = 10,
+        gaps_in  = 2,
+        gaps_out = 5,
+
       border_size = 2,
 
       col = {
-         active_border = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
+            active_border   = "rgba(7aa2f7ff)",
 	 inactive_border = "rgba(595959aa)", 
       },
 
-      resize_on_border = false,
-
+        resize_on_border = true,
       allow_tearing = false,
-
       layout = "dwindle",
    },
 
@@ -58,17 +76,17 @@ hl.config({
         inactive_opacity = 1.0,
 
         shadow = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0xee1a1a1a,
+            enabled      = false,
+            --range        = 4,
+            --render_power = 3,
+            --color        = 0xee1a1a1a,
         },
 
         blur = {
-            enabled   = true,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
+            enabled   = false,
+            --size      = 3,
+            --passes    = 1,
+            --vibrancy  = 0.1696,
         },
     },
 
@@ -77,15 +95,13 @@ hl.config({
     },
 })
 
-
 hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
 hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
 hl.curve("linear",         { type = "bezier", points = { {0, 0},       {1, 1}       } })
 hl.curve("almostLinear",   { type = "bezier", points = { {0.5, 0.5},   {0.75, 1}    } })
 hl.curve("quick",          { type = "bezier", points = { {0.15, 0},    {0.1, 1}     } })
 
--- Default springs
-hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
+hl.curve("easy",           { type = "spring", mass = 1, stiffness = 238.1191, dampening = 24.21279333 })
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
@@ -105,13 +121,11 @@ hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 1.21, bezier = "
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
-
 hl.config({
    dwindle = {
       preserve_split = true,
    },
 })
-
 
 hl.config({
     master = {
@@ -119,33 +133,52 @@ hl.config({
     },
 })
 
-
 hl.config({
     scrolling = {
         fullscreen_on_one_column = true,
     },
 })
 
+----------------
+----  MISC  ----
+----------------
 
 hl.config({
    misc = {
       force_default_wallpaper = 0,
       disable_hyprland_logo = true,
+        disable_splash_rendering = true,
+        allow_session_lock_restore = true,
     },
 })
 
+hl.config({
+    xwayland = {
+        force_zero_scaling = true
+  }
+})
+
+hl.config({
+    ecosystem = {
+        no_donation_nag = true
+    }
+})
+
+---------------
+---- INPUT ----
+---------------
 
 hl.config({
    input = {
-      kb_layout = "de",
+        kb_layout  = "de",
       kb_variant = "nodeadkeys",
-      kb_model = "",
+        kb_model   = "",
       kb_options = "",
-      kb_rules = "",
+        kb_rules   = "",
 
       follow_mouse = 1,
 
-      sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
+        sensitivity = 0,
 
       touchpad = {
          natural_scroll = false,
@@ -153,13 +186,11 @@ hl.config({
    },
 })
 
-
 hl.gesture({
     fingers = 3,
     direction = "horizontal",
     action = "workspace"
 })
-
 
 hl.device({
     name        = "epic-mouse-v1",
@@ -167,11 +198,14 @@ hl.device({
 })
 
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+---------------------
+---- KEYBINDINGS ----
+---------------------
+
+local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
-
+hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " " .. fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
@@ -220,6 +254,10 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 
 
+--------------------------------
+---- WINDOWS AND WORKSPACES ----
+--------------------------------
+
 local suppressMaximizeRule = hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
     name  = "suppress-maximize-events",
@@ -229,9 +267,7 @@ local suppressMaximizeRule = hl.window_rule({
 })
 -- suppressMaximizeRule:set_enabled(false)
 
-
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
     name  = "fix-xwayland-drags",
     match = {
         class      = "^$",
@@ -245,13 +281,11 @@ hl.window_rule({
     no_focus = true,
 })
 
+-- Hyprland-run windowrule
+hl.window_rule({
+    name  = "move-hyprland-run",
+    match = { class = "hyprland-run" },
 
--- Set Blur on wlogout
-hl.layer_rule({
-    name = "blur-wlogout",
-    blur = true,
-    match = {
-        namespace = "logout_dialog"
-    }
+    move  = "20 monitor_h-120",
+    float = true,
 })
-
