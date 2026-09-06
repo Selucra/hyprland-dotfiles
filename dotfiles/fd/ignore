@@ -17,6 +17,7 @@
 .config/obs-studio/
 .config/spicetify/
 .config/spotify/
+.git/
 
 # Only track custom desktop shortcuts
 .local/
