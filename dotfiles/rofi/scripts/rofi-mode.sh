@@ -12,5 +12,5 @@ case "$1" in
     clip)
         cliphist list | rofi -dmenu -p " " -theme dmenu | cliphist decode | wl-copy ;;
     emoji)
-        rofimoji --max-recent 0 --selector-args="-theme dmenu" ;;
+        rofimoji --max-recent 0 --action clipboard --selector-args="-theme dmenu" ;;
 esac
