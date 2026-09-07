@@ -1,0 +1,5 @@
+@theme "config"
+
+element-icon {
+    enabled: false;
+}

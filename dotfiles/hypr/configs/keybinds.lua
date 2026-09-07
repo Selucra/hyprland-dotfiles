@@ -17,17 +17,19 @@ hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " " .. fileManager))
 hl.bind(mainMod .. " + W", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("pkill " .. menu .. " || " .. menu .. " -show drun"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures"))
 
-hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("pkill " .. menu .. " || ~/.config/rofi/scripts/filepicker.sh")) -- filepicker
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("pkill " .. menu .. " || cliphist list | " .. menu .. " -dmenu | cliphist decode | wl-copy")) -- clipboard
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("pkill " .. menu .. " || rofimoji")) -- emoji picker
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(terminal .. " qalc")) -- calculator
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("textpieces")) -- notes
+local rofiMode = "~/.config/rofi/scripts/rofi-mode.sh"
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(rofiMode .. " drun"))
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(rofiMode .. " file"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(rofiMode .. " clip"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(rofiMode .. " emoji"))
+
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(terminal .. " qalc"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("textpieces"))
 
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))

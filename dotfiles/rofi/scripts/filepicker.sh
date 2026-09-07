@@ -8,7 +8,7 @@ SELECTION_INDEX=$(
         printf "%s <span weight=\"light\" alpha=\"40%%\">  (%s)</span>\n" "${path##*/}" "${path/#$HOME/\~}"
     done | rofi -dmenu -markup-rows -p " " \
                 -i -matching fuzzy -format i \
-                -theme-str 'element-icon { missing-image: false; size: 0px; margin: 0px; padding: 0px; }'
+                -theme dmenu
 )
 
 if [[ -n "$SELECTION_INDEX" ]]; then
