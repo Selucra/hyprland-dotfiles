@@ -91,7 +91,8 @@
       "format": {
         "today": "<span color='#00ffaa'><b>{}</b></span>"
       }
-    }
+    },
+    "on-click": "kitty -e tty-clock -s -c -t"
   },
   "custom/arch": {
     "format": "⋏",
