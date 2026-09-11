@@ -60,6 +60,15 @@ hl.bind(mainMod .. " + ALT + down", hl.dsp.window.resize({ x = 0, y = 30, relati
 
 hl.bind(mainMod .. " + ALT + F", hl.dsp.window.fullscreen({ mode ="fullscreen" }))
 
+hl.bind(mainMod .. " + P", function() 
+    hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+    hl.dispatch(hl.dsp.window.pin())
+end)
+
+-- special workspace (scratchpad)
+hl.bind(mainMod .. " + ALT + S", hl.dsp.workspace.toggle_special("scratchpad"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:scratchpad" }))
+
 -- Laptop multimedia keys
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("~/.config/hypr/scripts/volumectl.sh 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("~/.config/hypr/scripts/volumectl.sh 5%-"), { locked = true, repeating = true })
