@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Io
+import Quickshell.Wayland
 
 Scope {
     id: root
@@ -49,7 +50,8 @@ Scope {
             anchors.bottom: true
             margins.bottom: 5
             color: "transparent"
-            exclusiveZone: 0
+            WlrLayershell.layer: WlrLayer.Overlay
+            exclusionMode: WlrLayershell.Ignore
 
             Rectangle {
                 anchors.fill: parent
