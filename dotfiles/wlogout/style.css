@@ -28,7 +28,7 @@ button:focus {
 }
 
 button:hover {
-    background-color: #131721;
+    background-color: rgba(122, 162, 247, 0.07);
 }
 
 #lock {
